@@ -8,6 +8,12 @@ const mongoose = require('mongoose');
 
 const PORT = process.env.PORT;
 
+//using ngrok
+const ngrok = require('ngrok');
+(async function() {
+  const url = await ngrok.connect(PORT);
+  console.log (url)
+})();
 //middlewares
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
